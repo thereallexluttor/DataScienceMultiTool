@@ -1,11 +1,11 @@
 #DCPE is a custom class for manage and handle a diverse types of datasets.
 
 #import libraries to start working
- import pandas as pd
- import numpy as np
+import pandas as pd
+import numpy as np
 
 #a simply class to unify all the cleaning stuff
- class DataFrameHandler:
+class DataFrameHandler:
 
     #instance method 
     def __init__(self, dataframe):
@@ -32,7 +32,7 @@
         categorical_cols = [col for col in cleaned_data.columns if cleaned_data[col].dtype == "object" and len(cleaned_data[col].unique()) < 5]
 
         #check it there are any categorical columns.
-        if caregocial_cols:
+        if categorical_cols:
 
             #return an encoded dataframe
             encoded_data = pd.get_dummies(cleaned_data, columns = categorical_cols)
